@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowthGenie Affiliate</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">GrowthGenie Affiliate</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#sellers">Sellers</a></li>
+                <li><a href="#safety">Safety Tips</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="region-selector">
+                <label for="regionSelect" class="visually-hidden">Select your region</label>
+                <select id="regionSelect" aria-label="Select your region">
+                    <option value="us">🇺🇸 USD - English</option>
+                    <option value="uk">🇬🇧 GBP - English</option>
+                    <option value="eu">🇪🇺 EUR - English</option>
+                    <option value="ca">🇨🇦 CAD - English</option>
+                    <option value="au">🇦🇺 AUD - English</option>
+                    <option value="jp">🇯🇵 JPY - 日本語</option>
+                    <option value="kr">🇰🇷 KRW - 한국어</option>
+                    <option value="cn">🇨🇳 CNY - 中文</option>
+                    <option value="de">🇩🇪 EUR - Deutsch</option>
+                    <option value="fr">🇫🇷 EUR - Français</option>
+                    <option value="es">🇪🇸 EUR - Español</option>
+                    <option value="it">🇮🇹 EUR - Italiano</option>
+                    <option value="br">🇧🇷 BRL - Português</option>
+                    <option value="in">🇮🇳 INR - हिंदी</option>
+                    <option value="za">🇿🇦 ZAR - English</option>
+                </select>
+            </div>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Welcome to GrowthGenie Affiliate</h1>
+            <p>Your trusted marketplace for small businesses and self-employed entrepreneurs</p>
+            <div class="cta-buttons">
+                <a href="#register" class="btn primary">Start Selling</a>
+                <a href="#products" class="btn secondary">Browse Products</a>
+            </div>
+        </section>
+
+        <section id="safety" class="safety-warnings">
+            <h2>Important Safety Information</h2>
+            <div class="warning-container">
+                <div class="warning-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> For Sellers</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Always provide accurate product descriptions</li>
+                        <li><i class="fas fa-check"></i> Never misrepresent your products or services</li>
+                        <li><i class="fas fa-check"></i> Maintain clear communication with customers</li>
+                        <li><i class="fas fa-check"></i> Deliver products as promised</li>
+                        <li><i class="fas fa-check"></i> Use our tracking system for all shipments</li>
+                    </ul>
+                </div>
+                <div class="warning-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> For Buyers</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Verify seller credentials before purchasing</li>
+                        <li><i class="fas fa-check"></i> Read product reviews and ratings</li>
+                        <li><i class="fas fa-check"></i> Use secure payment methods</li>
+                        <li><i class="fas fa-check"></i> Report suspicious activities</li>
+                        <li><i class="fas fa-check"></i> Track your orders using our system</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="courier" class="courier-section">
+            <h2>Courier Fee Calculator</h2>
+            <div class="courier-container">
+                <div class="courier-calculator">
+                    <h3><i class="fas fa-truck"></i> Calculate Shipping Costs</h3>
+                    <p class="form-description">Enter your location details to estimate shipping costs for your order.</p>
+                    
+                    <form id="courierForm">
+                        <div class="form-group">
+                            <label for="fromLocation">From (Seller Location)</label>
+                            <select id="fromLocation" name="fromLocation" required>
+                                <option value="">Select seller location</option>
+                                <option value="north">North Region</option>
+                                <option value="south">South Region</option>
+                                <option value="east">East Region</option>
+                                <option value="west">West Region</option>
+                                <option value="central">Central Region</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="toLocation">To (Your Location)</label>
+                            <select id="toLocation" name="toLocation" required>
+                                <option value="">Select your location</option>
+                                <option value="north">North Region</option>
+                                <option value="south">South Region</option>
+                                <option value="east">East Region</option>
+                                <option value="west">West Region</option>
+                                <option value="central">Central Region</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="packageWeight">Package Weight (kg)</label>
+                            <input type="number" id="packageWeight" name="packageWeight" min="0.1" step="0.1" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="packageSize">Package Size</label>
+                            <select id="packageSize" name="packageSize" required>
+                                <option value="">Select package size</option>
+                                <option value="small">Small (up to 30x30x30 cm)</option>
+                                <option value="medium">Medium (up to 50x50x50 cm)</option>
+                                <option value="large">Large (up to 100x100x100 cm)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn primary">Calculate Fee</button>
+                    </form>
+                    
+                    <div id="courierResult" class="courier-result">
+                        <h4>Estimated Shipping Cost:</h4>
+                        <p id="estimatedCost">$0.00</p>
+                        <p class="courier-note">*Final cost may vary based on exact location and special handling requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="courier-info">
+                    <h3><i class="fas fa-info-circle"></i> Shipping Information</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> All shipments are tracked from seller to buyer</li>
+                        <li><i class="fas fa-check-circle"></i> Insurance included for packages up to $100</li>
+                        <li><i class="fas fa-check-circle"></i> Delivery times vary by distance (2-7 business days)</li>
+                        <li><i class="fas fa-check-circle"></i> Signature required upon delivery for security</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="tracking" class="tracking-section">
+            <h2>Order Tracking</h2>
+            <div class="tracking-container">
+                <div class="tracking-form">
+                    <h3><i class="fas fa-search-location"></i> Track Your Order</h3>
+                    <p class="form-description">Enter your tracking number to check the status of your order.</p>
+                    
+                    <form id="trackingForm">
+                        <div class="form-group">
+                            <label for="trackingNumber">Tracking Number</label>
+                            <input type="text" id="trackingNumber" name="trackingNumber" placeholder="Enter your tracking number" required>
+                        </div>
+                        
+                        <button type="submit" class="btn primary">Track Order</button>
+                    </form>
+                </div>
+                
+                <div id="trackingResult" class="tracking-result">
+                    <h3>Tracking Information</h3>
+                    <div class="tracking-status">
+                        <div class="tracking-step active">
+                            <i class="fas fa-box"></i>
+                            <p>Order Placed</p>
+                            <span class="tracking-date">May 15, 2024</span>
+                        </div>
+                        <div class="tracking-step active">
+                            <i class="fas fa-warehouse"></i>
+                            <p>Processing</p>
+                            <span class="tracking-date">May 16, 2024</span>
+                        </div>
+                        <div class="tracking-step active">
+                            <i class="fas fa-truck"></i>
+                            <p>In Transit</p>
+                            <span class="tracking-date">May 17, 2024</span>
+                        </div>
+                        <div class="tracking-step">
+                            <i class="fas fa-home"></i>
+                            <p>Out for Delivery</p>
+                            <span class="tracking-date">-</span>
+                        </div>
+                        <div class="tracking-step">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Delivered</p>
+                            <span class="tracking-date">-</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tracking-details">
+                        <h4>Delivery Details</h4>
+                        <p><strong>Estimated Delivery:</strong> May 20, 2024</p>
+                        <p><strong>Current Location:</strong> Distribution Center, Central Region</p>
+                        <p><strong>Courier:</strong> SmallBiz Express</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Smart Watch" class="product-image">
+                    <h3>Smart Watch Pro</h3>
+                    <p class="product-description">Premium fitness tracker with heart rate monitoring, sleep tracking, and smartphone notifications.</p>
+                    <div class="product-price">$129.99</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(42 reviews)</span>
+                    </div>
+                    <button class="btn primary">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge sale">Sale</div>
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Wireless Headphones" class="product-image">
+                    <h3>Premium Wireless Headphones</h3>
+                    <p class="product-description">Noise-cancelling Bluetooth headphones with 30-hour battery life and premium sound quality.</p>
+                    <div class="product-price">
+                        <span class="original-price">$199.99</span>
+                        <span class="sale-price">$149.99</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(87 reviews)</span>
+                    </div>
+                    <button class="btn primary">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Organic Coffee" class="product-image">
+                    <h3>Organic Coffee Collection</h3>
+                    <p class="product-description">Premium organic coffee beans from sustainable farms, roasted to perfection.</p>
+                    <div class="product-price">$24.99</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(31 reviews)</span>
+                    </div>
+                    <button class="btn primary">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">Handmade</div>
+                    <img src="images/Bamboo Kitchen Utensil Set.jpg" alt="Bamboo Utensil Set" class="product-image">
+                    <h3>Bamboo Kitchen Utensil Set</h3>
+                    <p class="product-description">Sustainable bamboo cooking utensils for your kitchen.</p>
+                    <div class="product-price">$34.99</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(45 reviews)</span>
+                    </div>
+                    <button class="btn primary">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge sale">Sale</div>
+                    <img src="https://images.unsplash.com/photo-1525904097878-94fb15835963?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Essential Oil Set" class="product-image">
+                    <h3>Natural Essential Oil Set</h3>
+                    <p class="product-description">Set of 6 pure essential oils for aromatherapy and wellness.</p>
+                    <div class="product-price">
+                        <span class="original-price">$49.99</span>
+                        <span class="sale-price">$39.99</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(56 reviews)</span>
+                    </div>
+                    <button class="btn primary">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="sellers" class="small-businesses">
+            <h2>Featured Small Businesses</h2>
+            <div class="business-grid">
+                <div class="business-card">
+                    <div class="business-header">
+                        <img src="images/Green Leaf Organics.jpg" alt="Green Leaf Organics" class="business-logo">
+                        <h3>Green Leaf Organics</h3>
+                        <div class="business-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5 - 120 reviews)</span>
+                        </div>
+                    </div>
+                    <p class="business-description">Organic produce and natural products from local farms.</p>
+                    <div class="business-products">
+                        <h4>Featured Products:</h4>
+                        <ul>
+                            <li><i class="fas fa-leaf"></i> Organic Vegetable Box</li>
+                            <li><i class="fas fa-seedling"></i> Fresh Herbs Collection</li>
+                            <li><i class="fas fa-apple-alt"></i> Seasonal Fruit Basket</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn primary">View Store</a>
+                </div>
+
+                <div class="business-card">
+                    <div class="business-header">
+                        <img src="images/Craft & Vine.png" alt="Craft & Vine" class="business-logo">
+                        <h3>Craft & Vine</h3>
+                        <div class="business-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0 - 85 reviews)</span>
+                        </div>
+                    </div>
+                    <p class="business-description">Handcrafted jewelry and accessories made with sustainable materials.</p>
+                    <div class="business-products">
+                        <h4>Featured Products:</h4>
+                        <ul>
+                            <li><i class="fas fa-gem"></i> Sterling Silver Necklace</li>
+                            <li><i class="fas fa-ring"></i> Recycled Glass Earrings</li>
+                            <li><i class="fas fa-bracelet"></i> Wooden Bead Bracelet</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn primary">View Store</a>
+                </div>
+
+                <div class="business-card">
+                    <div class="business-header">
+                        <img src="images/Tech Solutions.jpg" alt="Tech Solutions" class="business-logo">
+                        <h3>Tech Solutions</h3>
+                        <div class="business-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0 - 210 reviews)</span>
+                        </div>
+                    </div>
+                    <p class="business-description">IT consulting and computer repair services for small businesses.</p>
+                    <div class="business-products">
+                        <h4>Featured Services:</h4>
+                        <ul>
+                            <li><i class="fas fa-laptop"></i> Computer Repair Package</li>
+                            <li><i class="fas fa-network-wired"></i> Network Setup Service</li>
+                            <li><i class="fas fa-shield-alt"></i> Cybersecurity Consultation</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn primary">View Store</a>
+                </div>
+
+                <div class="business-card">
+                    <div class="business-header">
+                        <img src="images/Sweet Treats Bakery.jpg" alt="Sweet Treats Bakery" class="business-logo">
+                        <h3>Sweet Treats Bakery</h3>
+                        <div class="business-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7 - 175 reviews)</span>
+                        </div>
+                    </div>
+                    <p class="business-description">Homemade baked goods and custom cakes for special occasions.</p>
+                    <div class="business-products">
+                        <h4>Featured Products:</h4>
+                        <ul>
+                            <li><i class="fas fa-birthday-cake"></i> Custom Birthday Cakes</li>
+                            <li><i class="fas fa-cookie"></i> Gourmet Cookie Box</li>
+                            <li><i class="fas fa-bread-slice"></i> Artisan Bread Selection</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn primary">View Store</a>
+                </div>
+
+                <div class="business-card">
+                    <div class="business-header">
+                        <img src="images/Eco Clean.jpg" alt="Eco Clean" class="business-logo">
+                        <h3>Eco Clean</h3>
+                        <div class="business-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9 - 95 reviews)</span>
+                        </div>
+                    </div>
+                    <p class="business-description">Eco-friendly cleaning products and services for homes and offices.</p>
+                    <div class="business-products">
+                        <h4>Featured Products:</h4>
+                        <ul>
+                            <li><i class="fas fa-spray-can"></i> Natural All-Purpose Cleaner</li>
+                            <li><i class="fas fa-brush"></i> Bamboo Cleaning Kit</li>
+                            <li><i class="fas fa-hand-sparkles"></i> Eco-Friendly Laundry Detergent</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn primary">View Store</a>
+                </div>
+
+                <div class="business-card">
+                    <div class="business-header">
+                        <img src="images/ZENWAY FIT.jpg" alt="Fitness Fusion" class="business-logo">
+                        <h3>ZENWAY FIT</h3>
+                        <div class="business-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.2 - 150 reviews)</span>
+                        </div>
+                    </div>
+                    <p class="business-description">Personal training and fitness equipment for home workouts.</p>
+                    <div class="business-products">
+                        <h4>Featured Products:</h4>
+                        <ul>
+                            <li><i class="fas fa-dumbbell"></i> Resistance Band Set</li>
+                            <li><i class="fas fa-yoga"></i> Yoga Mat & Block Kit</li>
+                            <li><i class="fas fa-running"></i> Personal Training Session</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn primary">View Store</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="register" class="registration-section">
+            <h2>Create an Account</h2>
+            <div class="registration-container">
+                <div class="registration-tabs">
+                    <button class="tab-btn active" data-tab="buyer">Buyer Registration</button>
+                    <button class="tab-btn" data-tab="seller">Seller Registration</button>
+                </div>
+                
+                <div class="registration-form-container">
+                    <!-- Buyer Registration Form -->
+                    <form id="buyerForm" class="registration-form active">
+                        <h3><i class="fas fa-shopping-cart"></i> Buyer Registration</h3>
+                        <p class="form-description">Create an account to browse and purchase products from our trusted sellers.</p>
+                        
+                        <div class="form-group">
+                            <label for="buyerName">Full Name</label>
+                            <input type="text" id="buyerName" name="buyerName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="buyerEmail">Email Address</label>
+                            <input type="email" id="buyerEmail" name="buyerEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="buyerPhone">Phone Number</label>
+                            <input type="tel" id="buyerPhone" name="buyerPhone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="buyerId">ID Number</label>
+                            <input type="text" id="buyerId" name="buyerId" required>
+                            <small>For verification purposes only. Your information is secure.</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="buyerPassword">Password</label>
+                            <input type="password" id="buyerPassword" name="buyerPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="buyerConfirmPassword">Confirm Password</label>
+                            <input type="password" id="buyerConfirmPassword" name="buyerConfirmPassword" required>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="buyerTerms" name="buyerTerms" required>
+                            <label for="buyerTerms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+                        </div>
+                        
+                        <button type="submit" class="btn primary">Register as Buyer</button>
+                    </form>
+                    
+                    <!-- Seller Registration Form -->
+                    <form id="sellerForm" class="registration-form">
+                        <h3><i class="fas fa-store"></i> Seller Registration</h3>
+                        <p class="form-description">Create an account to sell your products on our platform.</p>
+                        
+                        <div class="form-group">
+                            <label for="sellerName">Full Name</label>
+                            <input type="text" id="sellerName" name="sellerName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="businessName">Business Name</label>
+                            <input type="text" id="businessName" name="businessName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sellerEmail">Email Address</label>
+                            <input type="email" id="sellerEmail" name="sellerEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sellerPhone">Phone Number</label>
+                            <input type="tel" id="sellerPhone" name="sellerPhone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sellerId">ID Number</label>
+                            <input type="text" id="sellerId" name="sellerId" required>
+                            <small>For verification purposes only. Your information is secure.</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="businessAddress">Business Address</label>
+                            <textarea id="businessAddress" name="businessAddress" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="businessType">Business Type</label>
+                            <select id="businessType" name="businessType" required>
+                                <option value="">Select business type</option>
+                                <option value="retail">Retail</option>
+                                <option value="food">Food & Beverage</option>
+                                <option value="service">Service</option>
+                                <option value="handmade">Handmade/Craft</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sellerPassword">Password</label>
+                            <input type="password" id="sellerPassword" name="sellerPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sellerConfirmPassword">Confirm Password</label>
+                            <input type="password" id="sellerConfirmPassword" name="sellerConfirmPassword" required>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="sellerTerms" name="sellerTerms" required>
+                            <label for="sellerTerms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+                        </div>
+                        
+                        <button type="submit" class="btn primary">Register as Seller</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Our Location</h3>
+                        <p>123 Business Street, Suite 100<br>City, State 12345</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>support@growthgenie.com<br>sales@growthgenie.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Call Us</h3>
+                        <p>+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Business (Optional)</label>
+                            <select id="business" name="business">
+                                <option value="">Select a business</option>
+                                <option value="green-leaf">Green Leaf Organics</option>
+                                <option value="craft-vine">Craft & Vine</option>
+                                <option value="tech-solutions">Tech Solutions</option>
+                                <option value="sweet-treats">Sweet Treats Bakery</option>
+                                <option value="eco-clean">Eco Clean</option>
+                                <option value="fitness-fusion">Fitness Fusion</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Supporting small businesses and entrepreneurs</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> support@growthgenie.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Visit our Facebook page"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Visit our Twitter page"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Visit our Instagram page"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GrowthGenie Affiliate. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Dark mode toggle functionality
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('darkMode', null);
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // Region selector functionality
+        const regionSelect = document.getElementById('regionSelect');
+        
+        // Check for saved region preference
+        if (localStorage.getItem('region') !== null) {
+            regionSelect.value = localStorage.getItem('region');
+            updateCurrencyAndLanguage(regionSelect.value);
+        }
+        
+        regionSelect.addEventListener('change', () => {
+            const selectedRegion = regionSelect.value;
+            localStorage.setItem('region', selectedRegion);
+            updateCurrencyAndLanguage(selectedRegion);
+        });
+        
+        function updateCurrencyAndLanguage(region) {
+            // This function would update prices and language throughout the site
+            // For demo purposes, we'll just show an alert
+            const regionData = {
+                us: { currency: 'USD', symbol: '$', language: 'English' },
+                uk: { currency: 'GBP', symbol: '£', language: 'English' },
+                eu: { currency: 'EUR', symbol: '€', language: 'English' },
+                ca: { currency: 'CAD', symbol: 'C$', language: 'English' },
+                au: { currency: 'AUD', symbol: 'A$', language: 'English' },
+                jp: { currency: 'JPY', symbol: '¥', language: '日本語' },
+                kr: { currency: 'KRW', symbol: '₩', language: '한국어' },
+                cn: { currency: 'CNY', symbol: '¥', language: '中文' },
+                de: { currency: 'EUR', symbol: '€', language: 'Deutsch' },
+                fr: { currency: 'EUR', symbol: '€', language: 'Français' },
+                es: { currency: 'EUR', symbol: '€', language: 'Español' },
+                it: { currency: 'EUR', symbol: '€', language: 'Italiano' },
+                br: { currency: 'BRL', symbol: 'R$', language: 'Português' },
+                in: { currency: 'INR', symbol: '₹', language: 'हिंदी' },
+                za: { currency: 'ZAR', symbol: 'R', language: 'English' }
+            };
+            
+            const data = regionData[region];
+            console.log(`Currency updated to ${data.currency} (${data.symbol}) and language to ${data.language}`);
+            
+            // In a real implementation, this would update all prices and text throughout the site
+            // For now, we'll just update the product prices as an example
+            updateProductPrices(data.symbol);
+        }
+        
+        function updateProductPrices(symbol) {
+            // Update all product prices with the new currency symbol
+            const priceElements = document.querySelectorAll('.product-price');
+            priceElements.forEach(element => {
+                const text = element.textContent;
+                if (text.includes('$')) {
+                    element.textContent = text.replace('$', symbol);
+                }
+            });
+            
+            // Update sale prices
+            const salePriceElements = document.querySelectorAll('.sale-price');
+            salePriceElements.forEach(element => {
+                const text = element.textContent;
+                if (text.includes('$')) {
+                    element.textContent = text.replace('$', symbol);
+                }
+            });
+        }
+
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+
+        // Registration tabs functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const registrationForms = document.querySelectorAll('.registration-form');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and forms
+                tabBtns.forEach(b => b.classList.remove('active'));
+                registrationForms.forEach(form => form.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding form
+                btn.classList.add('active');
+                const tabName = btn.getAttribute('data-tab');
+                document.getElementById(`${tabName}Form`).classList.add('active');
+            });
+        });
+
+        // Registration form submission
+        const buyerForm = document.getElementById('buyerForm');
+        const sellerForm = document.getElementById('sellerForm');
+
+        if (buyerForm) {
+            buyerForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate passwords match
+                const password = document.getElementById('buyerPassword').value;
+                const confirmPassword = document.getElementById('buyerConfirmPassword').value;
+                
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match!');
+                    return;
+                }
+                
+                alert('Thank you for registering as a buyer! Your account has been created.');
+                buyerForm.reset();
+            });
+        }
+
+        if (sellerForm) {
+            sellerForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate passwords match
+                const password = document.getElementById('sellerPassword').value;
+                const confirmPassword = document.getElementById('sellerConfirmPassword').value;
+                
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match!');
+                    return;
+                }
+                
+                alert('Thank you for registering as a seller! Your account has been created and is pending verification.');
+                sellerForm.reset();
+            });
+        }
+        
+        // Courier fee calculator
+        const courierForm = document.getElementById('courierForm');
+        if (courierForm) {
+            courierForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const fromLocation = document.getElementById('fromLocation').value;
+                const toLocation = document.getElementById('toLocation').value;
+                const packageWeight = parseFloat(document.getElementById('packageWeight').value);
+                const packageSize = document.getElementById('packageSize').value;
+                
+                // Base rate by distance
+                let baseRate = 0;
+                if (fromLocation === toLocation) {
+                    baseRate = 5; // Same region
+                } else if ((fromLocation === 'north' && toLocation === 'south') || 
+                          (fromLocation === 'east' && toLocation === 'west')) {
+                    baseRate = 25; // Opposite regions
+                } else {
+                    baseRate = 15; // Adjacent regions
+                }
+                
+                // Weight factor
+                const weightFactor = packageWeight * 2;
+                
+                // Size factor
+                let sizeFactor = 0;
+                if (packageSize === 'small') {
+                    sizeFactor = 0;
+                } else if (packageSize === 'medium') {
+                    sizeFactor = 5;
+                } else if (packageSize === 'large') {
+                    sizeFactor = 10;
+                }
+                
+                // Calculate total
+                const total = baseRate + weightFactor + sizeFactor;
+                
+                // Display result
+                document.getElementById('estimatedCost').textContent = `$${total.toFixed(2)}`;
+                document.getElementById('courierResult').style.display = 'block';
+            });
+        }
+        
+        // Tracking form
+        const trackingForm = document.getElementById('trackingForm');
+        if (trackingForm) {
+            trackingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const trackingNumber = document.getElementById('trackingNumber').value;
+                
+                // In a real application, this would fetch tracking data from a server
+                // For demo purposes, we'll just show the tracking result
+                document.getElementById('trackingResult').style.display = 'block';
+                
+                // Scroll to tracking result
+                document.getElementById('trackingResult').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
+</body>
+</html>
